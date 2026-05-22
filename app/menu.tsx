@@ -35,9 +35,7 @@ export default function MenuScreen() {
         <Text style={styles.foodPrice}>{item.price}</Text>
       </View>
 
-      <TouchableOpacity style={styles.addButton}>
-        <Ionicons name="bag-handle" size={20} color="white" />
-      </TouchableOpacity>
+
     </View>
   );
 
@@ -57,9 +55,7 @@ export default function MenuScreen() {
           />
         </View>
 
-        <View style={styles.cartIconContainer}>
-          <Ionicons name="basket" size={28} color="#1E352F" />
-        </View>
+        
       </View>
 
       <FlatList
@@ -76,7 +72,7 @@ export default function MenuScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9F9F9',
+    backgroundColor: '#EFDDDD',
   },
   header: {
     flexDirection: 'row',
@@ -84,7 +80,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 10,
-    backgroundColor: '#FFF',
+    backgroundColor: '#EFDDDD',
   },
   backButton: {
     padding: 5,
@@ -93,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#F0F0F0',
+    backgroundColor: '#EFDDDD',
     borderRadius: 25,
     marginHorizontal: 15,
     paddingHorizontal: 15,
@@ -120,7 +116,7 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 15,
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: '#4e31317c',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -138,7 +134,7 @@ const styles = StyleSheet.create({
   foodName: {
     fontSize: 17,
     fontWeight: 'bold',
-    color: '#1E352F',
+    color: '#0f2b23af',
   },
   foodType: {
     fontSize: 13,
