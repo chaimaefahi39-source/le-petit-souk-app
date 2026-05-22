@@ -1,72 +1,70 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View, ImageBackground } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function Index() {
+  const router = useRouter();
+
   return (
-    <>
-    <Image
-      style= {[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
-      source = {require("../assets/images/unsplash_4Tgjeh1fWCc.png")}
-    />
-
     <View style={Styles.parrenteA}>
-  <View style={Styles.firstview}>
-    <Text style={Styles.h1style}> le petit souk </Text>
-    <Text style={Styles.Titelstyle}>
-     Marocain Traditionnel cuisine
-    </Text>
-  </View>
+      <ImageBackground
+        style={StyleSheet.absoluteFill}
+        source={require("../assets/images/unsplash_4Tgjeh1fWCc.png")}
+      />
 
+      <View style={Styles.firstview}>
+        <Text style={Styles.histyle}>le petit souk</Text>
+        <Text style={Styles.Titelstyle}>Marocain Traditionnel cuisine</Text>
+      </View>
 
-  <Text style={Styles.textp2}>
-    bienvenue au coeur des saveurs authentiques du maroc . decouvrez une cuisine genereuse et traditionelle preparee avec passion.
-  </Text>
-</View>
+      <Text style={Styles.textp2}>
+        bienvenue au coeur des saveurs authentiques du maroc. decouvrez une cuisine genereuse et traditionelle preparee avec passion.
+      </Text>
 
-<TouchableOpacity
-  style={Styles.buttonView}>
-    <Text style={Styles.buttonText}>Voir Le Menu</Text>
-  </TouchableOpacity>
-
-</>
-)
+      <TouchableOpacity 
+        style={Styles.buttonView}
+        onPress={() => router.push("/menu")}
+      >
+        <Text style={Styles.buttonText}>voir le menu</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
+
 const Styles = StyleSheet.create({
   parrenteA: {
     flex: 1,
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "rgba(6, 26, 8, 0.64)",
+    paddingVertical: 35,
+    backgroundColor: "rgba(2, 15, 3, 0.64)",
   },
   firstview: {
-    marginTop: 100,
-    alignItems: "center",           
+    marginTop: 30,
+    alignItems: "center",
+    width: "100%",
   },
-  h1style: {
+  histyle: {
     fontSize: 40,
     fontWeight: "bold",
-    color: "#d3b8b8",
+    color: "#ffffff",
+    textAlign: "center",
+    textTransform: "capitalize",
   },
   Titelstyle: {
-    fontSize: 20,
-    color: "#d3b8b8",
-    marginTop: 10,
-  },
-  image2: {
-    width: 300,
-    height: 200,
-    marginTop: 50,
-    borderRadius: 10,
+    fontSize: 18,
+    color: "#f0f0f0",
+    marginTop: 8,
+    textAlign: "center",
   },
   textp2: {
     fontSize: 16,
-    color: "#d3b8b8",
+    color: "#e0e0e0",
     textAlign: "center",
-    paddingBottom: 450,
-    marginTop: 20,
+    lineHeight: 24,
     paddingHorizontal: 20,
   },
   buttonView: {
-    backgroundColor: "#b19412",
+    backgroundColor: "#E5A93C",
     paddingVertical: 14,
     paddingHorizontal: 60,
     borderRadius: 10,
@@ -74,11 +72,11 @@ const Styles = StyleSheet.create({
     justifyContent: "center",
     width: "80%",
     marginBottom: 40,
-    
   },
   buttonText: {
-    color: "#dcebdd",
-    fontWeight: "bold",
     fontSize: 16,
+    fontWeight: "bold",
+    color: "#ffffff",
+    textAlign: "center",
   },
 });
